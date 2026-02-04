@@ -60,7 +60,7 @@ export function Header() {
   return (
     <>
       <header 
-        className={`sticky top-0 z-40 border-b border-saphir-blue/10 bg-[#fafcff]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fafcff]/80 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[height,background-color]`}
+        className={`sticky top-0 z-40 border-b border-saphir-blue/10 bg-[#fafcff]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fafcff]/85 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[height,background-color]`}
         data-scrolled={isScrolled}
       >
         <div 
