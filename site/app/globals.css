@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --saphir-blue: #1c5fb1;
+  --saphir-blue: #1b5bac;
   --saphir-teal: #00a99d;
   --saphir-dark: #2a2a2a;
+  --bg-overlay-opacity: 0.7; /* Ajuster entre 0 (pas de filtre) et 1 (noir complet) */
 }
 
 html {
@@ -14,7 +15,18 @@ html {
 
 body {
   @apply bg-cover bg-center bg-no-repeat bg-fixed text-saphir-dark antialiased;
-  background-image: url("https://saphir-invest.ch/wp-content/uploads/2020/03/complete-web.jpg");
+  background-image: url("/Tableau/complete-web.jpg");
+  position: relative;
+}
+
+/* Overlay sombre sur le fond */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, var(--bg-overlay-opacity));
+  pointer-events: none;
+  z-index: -1;
 }
 
 @layer utilities {

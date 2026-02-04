@@ -1,17 +1,41 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { navLinks, site } from "@/lib/site";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  
+  // L'effet grand header uniquement sur la page d'accueil (FR ou EN)
+  const isHomePage = pathname === "/" || pathname === "/en" || pathname === "/en/";
+  const isEnglish = pathname.startsWith("/en");
 
-  // Détecter le scroll pour changer l'apparence du header
+  // Détecter le scroll avec hysteresis pour éviter les oscillations (uniquement sur la home)
   useEffect(() => {
+    // Si on n'est pas sur la page d'accueil, toujours en mode compact
+    if (!isHomePage) {
+      setIsScrolled(true);
+      return;
+    }
+
+    const SCROLL_DOWN_THRESHOLD = 100; // Passer en mode compact après 100px
+    const SCROLL_UP_THRESHOLD = 20;    // Revenir en mode grand seulement si < 20px
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      
+      setIsScrolled((prev) => {
+        // Si on est en mode compact, revenir en grand seulement si on remonte très haut
+        if (prev) {
+          return scrollY > SCROLL_UP_THRESHOLD;
+        }
+        // Si on est en mode grand, passer en compact après le seuil
+        return scrollY > SCROLL_DOWN_THRESHOLD;
+      });
     };
     
     // Vérifier la position initiale
@@ -19,7 +43,7 @@ export function Header() {
     
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   // Empêcher le scroll quand le menu est ouvert
   useEffect(() => {
@@ -44,13 +68,13 @@ export function Header() {
       >
         <div 
           className={`relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 transition-all duration-500 sm:px-6 lg:px-8 ${
-            isScrolled ? "py-3" : "py-8 md:py-12"
+            isScrolled ? "py-2" : "py-4 md:py-6"
           }`}
         >
           {/* Logo + Tagline centré */}
           <Link href="/" className="flex flex-col items-center" aria-label={`${site.name} - Accueil`}>
             <img
-              src="https://saphir-invest.ch/wp-content/uploads/2020/02/cropped-Saphir-Invest-logo.png"
+              src="/logo/logo Saphir Invest.png"
               alt={site.name}
               width={400}
               height={68}
@@ -66,7 +90,7 @@ export function Header() {
                   : "h-auto opacity-100 text-xl md:text-2xl lg:text-3xl"
               }`}
             >
-              Gestion de patrimoine
+              {isEnglish ? "Asset management" : "Gestion de patrimoine"}
             </span>
           </Link>
 
@@ -74,7 +98,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="absolute right-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 flex-col items-center justify-center gap-1.5 rounded-md text-saphir-blue hover:bg-saphir-blue/10 sm:right-6 lg:right-8"
+            className="absolute right-0 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 flex-col items-center justify-center gap-1.5 rounded-md text-saphir-blue hover:bg-saphir-blue/10 sm:right-1 lg:right-2"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -132,22 +156,33 @@ export function Header() {
 
         {/* Liens de navigation */}
         <nav className="flex flex-1 flex-col gap-2 px-4 py-8" aria-label="Menu de navigation">
-          {navLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-3 rounded-lg px-4 py-4 text-lg font-medium text-white transition-colors hover:bg-white/10"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navLinks.map((item, index) => {
+            const labelsEN = ["Welcome", "Approach and Values", "Team", "Contact"];
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center gap-3 rounded-lg px-4 py-4 text-lg font-medium text-white transition-colors hover:bg-white/10"
+                onClick={() => setMenuOpen(false)}
+              >
+                {isEnglish ? labelsEN[index] : item.label}
+              </Link>
+            );
+          })}
+          {/* Lien de changement de langue */}
+          <Link
+            href={isEnglish ? "/" : "/en/"}
+            className="flex items-center gap-3 rounded-lg px-4 py-4 text-lg font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+            onClick={() => setMenuOpen(false)}
+          >
+            {isEnglish ? "Français" : "English"}
+          </Link>
         </nav>
 
         {/* Footer du menu */}
         <div className="border-t border-white/10 px-6 py-5">
           <p className="text-sm text-white/70">{site.name}</p>
-          <p className="text-sm text-white/70">{site.tagline}</p>
+          <p className="text-sm text-white/70">{isEnglish ? "Asset management" : site.tagline}</p>
         </div>
       </div>
     </>

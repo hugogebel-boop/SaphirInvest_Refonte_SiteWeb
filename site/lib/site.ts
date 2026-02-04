@@ -24,5 +24,4 @@ export const navLinks = [
   { href: "/valeurs/", label: "Approche et Valeurs" },
   { href: "/equipe/", label: "Équipe" },
   { href: "/nous-contacter/#contact", label: "Contact" },
-  { href: "/en/welcome/", label: "English" },
 ] as const;

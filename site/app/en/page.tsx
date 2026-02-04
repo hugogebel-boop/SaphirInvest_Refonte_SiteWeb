@@ -3,18 +3,18 @@
 import Link from "next/link";
 import { RevealText, RevealTextOnScroll } from "@/components/Typewriter";
 
-export default function HomePage() {
+export default function HomePageEN() {
   return (
     <>
       {/* Hero */}
       <section className="flex min-h-screen items-start pt-24 md:pt-32 lg:pt-40">
         <div className="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 lg:px-12">
           <h1 className="mb-10 font-heading text-3xl font-medium text-saphir-blue md:text-4xl lg:text-5xl" style={{ textShadow: '0 0 30px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.3), 0 0 90px rgba(0, 0, 0, 0.2)' }}>
-            Une gestion de convictions
+            Conviction-based management
           </h1>
           <blockquote className="font-quote text-xl italic md:text-2xl">
             « <RevealText 
-              text="La bourse demande que l'on ait des convictions. Ceux qui n'en n'ont pas deviennent ses victimes."
+              text="The stock market demands that you have convictions. Those who don't become its victims."
               speed={120}
             /> »
           </blockquote>
@@ -33,29 +33,29 @@ export default function HomePage() {
               href="/valeurs/"
               className="inline-block rounded border border-white px-4 py-2 text-sm font-medium text-white transition hover:bg-white hover:text-saphir-blue"
             >
-              Notre approche
+              Our approach
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Approche et Valeurs */}
+      {/* Approach and Values */}
       <section className="flex items-center bg-[#fafcff] py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-8 py-16 md:grid-cols-2 md:px-16 lg:px-24">
           <div className="hidden md:block">
             <img
               src="/Tableau/tableauzoom-web1.jpg"
-              alt="Tableau"
+              alt="Painting"
               className="h-full w-full rounded-lg object-cover shadow-xl"
             />
           </div>
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
-              Approche et valeurs
+              Approach and values
             </h2>
             <blockquote className="font-quote text-lg italic md:text-xl">
               <span className="text-saphir-dark">«</span> <RevealTextOnScroll 
-                text="Le risque n'est pas inhérent à un investissement; il est toujours relatif au prix payé. L'incertitude n'est pas la même chose que le risque. En effet, lorsqu'une grande incertitude – comme à l'automne 2008 – pousse les prix des titres à des niveaux particulièrement bas, ils deviennent souvent des investissements moins risqués."
+                text="Risk is not inherent in an investment; it is always relative to the price paid. Uncertainty is not the same as risk. Indeed, when great uncertainty – as in the autumn of 2008 – drives security prices to particularly low levels, they often become less risky investments."
                 speed={80}
                 darkMode
               /> <span className="text-saphir-dark">»</span>
@@ -75,38 +75,38 @@ export default function HomePage() {
                 href="/valeurs/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
-                Plus d&apos;informations
+                More information
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Qui sommes-nous */}
+      {/* Team */}
       <section className="flex items-center bg-[#fafcff] py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-8 py-16 md:grid-cols-2 md:px-16 lg:px-24">
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
-              Equipe
+              Team
             </h2>
             <p className="text-lg text-saphir-dark md:text-xl">
-              Une équipe dévouée et motivée à protéger
+              A dedicated team committed to protecting
               <br />
-              et accroître le patrimoine de notre clientèle.
+              and growing our clients&apos; wealth.
             </p>
             <div className="flex justify-start">
               <Link
                 href="/equipe/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
-                Découvrir
+                Discover
               </Link>
             </div>
           </div>
           <div className="hidden md:block">
             <img
               src="/Tableau/tableauzoom-web2.jpg"
-              alt="Tableau"
+              alt="Painting"
               className="h-full w-full rounded-lg object-cover shadow-xl"
             />
           </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
           <div className="hidden md:block">
             <img
               src="/Tableau/tableauzoom-web3.jpg"
-              alt="Tableau"
+              alt="Painting"
               className="h-full w-full rounded-lg object-cover shadow-xl"
             />
           </div>
@@ -129,14 +129,14 @@ export default function HomePage() {
             </h2>
             <blockquote className="font-quote text-lg italic md:text-xl">
               <span className="text-saphir-dark">«</span> <RevealTextOnScroll 
-                text="L'investisseur intelligent est un réaliste qui vend aux optimistes et achète aux pessimistes."
+                text="The intelligent investor is a realist who sells to optimists and buys from pessimists."
                 speed={100}
                 darkMode
               /> <span className="text-saphir-dark">»</span>
             </blockquote>
             <p className="text-right text-sm">
               <a
-                href="https://fr.wikipedia.org/wiki/Benjamin_Graham"
+                href="https://en.wikipedia.org/wiki/Benjamin_Graham"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-saphir-dark/70 hover:text-saphir-dark"
@@ -165,7 +165,7 @@ export default function HomePage() {
                     <br />
                     1003 Lausanne
                     <br />
-                    Suisse
+                    Switzerland
                   </p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default function HomePage() {
                 href="/nous-contacter/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
-                Nous trouver
+                Find us
               </Link>
             </div>
           </div>
