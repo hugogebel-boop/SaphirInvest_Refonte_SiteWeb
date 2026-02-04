@@ -24,7 +24,7 @@ body {
 /* Sur mobile, ajuster le fond pour éviter le zoom excessif */
 @media (max-width: 768px) {
   body {
-    background-size: 200% auto;
+    background-size: auto auto;
     background-position: center top;
     background-attachment: scroll;
   }
