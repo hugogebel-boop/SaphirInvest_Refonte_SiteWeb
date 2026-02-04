@@ -212,6 +212,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col font-sans text-white antialiased">
+        <div className="fixed-background" />
         <a href="#main" className="skip-link">
           Aller au contenu
         </a>

@@ -14,25 +14,26 @@ html {
 
 body {
   @apply bg-no-repeat bg-fixed text-saphir-dark antialiased;
-  background-image: url("/Tableau/complete-web (1).webp");
   background-color: #1a1a1a;
-  background-size: cover;
-  background-position: center top;
   position: relative;
 }
 
-/* Sur mobile, ajuster le fond pour éviter le zoom excessif */
-@media (max-width: 768px) {
-  body {
-    background-size: auto auto;
-    background-position: center top;
-    background-attachment: scroll;
-  }
+.fixed-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("/Tableau/complete-web (1).webp");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
-@media (max-width: 480px) {
-  body {
-    background-size: 250% auto;
+/* Sur mobile, on ajuste légèrement la position pour centrer l'intérêt du tableau */
+@media (max-width: 768px) {
+  .fixed-background {
     background-position: 60% top;
   }
 }
