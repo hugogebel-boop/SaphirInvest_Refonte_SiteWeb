@@ -2,39 +2,39 @@ import type { Metadata } from "next";
 import { AnimatedQuote } from "@/components/AnimatedQuote";
 
 export const metadata: Metadata = {
-  title: "Valeurs et Charte",
+  title: "Values and Charter",
   description:
-    "Notre objectif est d'établir un partenariat ouvert et impliqué avec nos clients. Nous investissons également notre propre argent dans nos idées d'investissement.",
+    "Our goal is to establish an open and committed partnership with our clients. We also invest our own money in our investment ideas.",
 };
 
-const charteItems = [
+const charterItems = [
   {
-    title: "Nous agissons avec intégrité et prudence.",
-    text: "En règle générale, nous n'investissons pas dans des fonds ou dans des produits mais à travers des positions directes. Nous ne touchons aucune rétrocession.",
+    title: "We act with integrity and prudence.",
+    text: "As a rule, we do not invest in funds or products but through direct positions. We do not receive any retrocessions.",
   },
   {
-    title: "Nous traitons votre investissement comme notre propre investissement",
-    text: "Nous investissons également notre propre argent dans nos idées de placement.",
+    title: "We treat your investment as our own investment.",
+    text: "We also invest our own money in our investment ideas.",
   },
   {
-    title: "Nous concentrons notre énergie sur les portefeuilles et non sur la commercialisation/vente.",
+    title: "We focus our energy on portfolios, not on marketing/sales.",
     text: "",
   },
   {
-    title: "Nous nous efforçons de maintenir les frais et autres coûts de transaction à un faible niveau.",
+    title: "We strive to keep fees and other transaction costs low.",
     text: "",
   },
   {
-    title: "Nous communiquons avec nos partenaires de la manière la plus transparente possible.",
+    title: "We communicate with our partners as transparently as possible.",
     text: "",
   },
   {
-    title: "Nous gérons les portefeuilles de nos clients selon notre philosophie d'investissement à long terme, axée sur la valeur et la recherche.",
+    title: "We manage our clients' portfolios according to our long-term, value-oriented and research-based investment philosophy.",
     text: "",
   },
 ];
 
-const banques = [
+const banks = [
   { name: "BCV", logo: "/Banque depositaire/BCV_logo-web.png", alt: "BCV" },
   {
     name: "Lombard Odier",
@@ -54,28 +54,27 @@ const banques = [
   { name: "UBS", logo: "/Banque depositaire/UBS_Logo-web.png", alt: "UBS" },
 ];
 
-export default function ValeursPage() {
+export default function ValuesPage() {
   return (
     <div className="bg-[#fafcff]">
-      {/* Approche et valeurs */}
+      {/* Approach and values */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
           <h1 className="mb-8 font-heading text-2xl font-semibold uppercase tracking-wider text-saphir-blue md:text-3xl">
-            Approche et valeurs
+            Approach and Values
           </h1>
           <div className="space-y-4 text-lg text-saphir-dark md:text-xl">
             <p>
-              Notre objectif est d&apos;établir un partenariat ouvert et impliqué avec nos clients.
+              Our goal is to establish an open and committed partnership with our clients.
             </p>
             <p>
-              Nous recherchons des investisseurs qui croient en notre philosophie de valeur, en notre processus
-              d&apos;investissement fondamental rigoureux et qui veulent investir comme des propriétaires
-              d&apos;entreprises à long terme.
+              We seek investors who believe in our value philosophy, our rigorous fundamental
+              investment process and who want to invest as long-term business owners.
             </p>
             <p>
-              Nous sommes influencés par de grands investisseurs tels que{" "}
+              We are influenced by great investors such as{" "}
               <a
-                href="https://fr.wikipedia.org/wiki/Benjamin_Graham"
+                href="https://en.wikipedia.org/wiki/Benjamin_Graham"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-saphir-blue"
@@ -84,7 +83,7 @@ export default function ValeursPage() {
               </a>
               ,{" "}
               <a
-                href="https://fr.wikipedia.org/wiki/Warren_Buffett"
+                href="https://en.wikipedia.org/wiki/Warren_Buffett"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-saphir-blue"
@@ -100,7 +99,7 @@ export default function ValeursPage() {
               >
                 Seth Klarman
               </a>{" "}
-              ou{" "}
+              or{" "}
               <a
                 href="https://en.wikipedia.org/wiki/Joel_Greenblatt"
                 target="_blank"
@@ -115,16 +114,16 @@ export default function ValeursPage() {
         </div>
       </section>
 
-      {/* Charte */}
+      {/* Charter */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
           <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
             <h2 className="mb-10 font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
-              Notre charte
+              Our Charter
             </h2>
             
             <div className="grid gap-8 md:grid-cols-2">
-              {charteItems.map((item, i) => (
+              {charterItems.map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-saphir-blue/20 bg-saphir-blue/5 text-xs font-semibold text-saphir-blue">
                     {i + 1}
@@ -142,15 +141,15 @@ export default function ValeursPage() {
         </div>
       </section>
 
-      {/* Banques dépositaires & Citation */}
+      {/* Custodian Banks & Quote */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
           <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
             <h2 className="mb-10 font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
-              Banques dépositaires
+              Custodian Banks
             </h2>
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
-              {banques.map((b) => (
+              {banks.map((b) => (
                 <div
                   key={b.name}
                   className="flex items-center justify-center p-4"
@@ -168,7 +167,7 @@ export default function ValeursPage() {
 
             <div className="mt-12">
               <AnimatedQuote
-                text="Le risque n'est pas inhérent à un investissement; il est toujours relatif au prix payé. L'incertitude n'est pas la même chose que le risque. En effet, lorsqu'une grande incertitude – comme à l'automne 2008 – pousse les prix des titres à des niveaux particulièrement bas, ils deviennent souvent des investissements moins risqués."
+                text="Risk is not inherent in an investment; it is always relative to the price paid. Uncertainty is not the same as risk. Indeed, when great uncertainty – as in the autumn of 2008 – drives security prices to particularly low levels, they often become less risky investments."
                 author="Seth Klarman"
                 authorUrl="https://en.wikipedia.org/wiki/Seth_Klarman"
                 speed={80}

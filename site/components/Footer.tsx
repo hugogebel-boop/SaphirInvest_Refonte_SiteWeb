@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { site, navLinks } from "@/lib/site";
+import { site, navLinks, navLinksEN } from "@/lib/site";
 
 export function Footer() {
   const { footer, address, phone } = site;
@@ -35,19 +35,16 @@ export function Footer() {
               Navigation
             </h3>
             <ul className="mt-4 space-y-3">
-              {navLinks.slice(0, 4).map((link, index) => {
-                const labelsEN = ["Welcome", "Approach and Values", "Team", "Contact"];
-                return (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-white/70 transition-colors hover:text-white"
-                    >
-                      {isEnglish ? labelsEN[index] : link.label}
-                    </Link>
-                  </li>
-                );
-              })}
+              {(isEnglish ? navLinksEN : navLinks).slice(0, 4).map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/70 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

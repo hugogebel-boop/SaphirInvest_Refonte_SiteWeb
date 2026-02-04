@@ -25,3 +25,10 @@ export const navLinks = [
   { href: "/equipe/", label: "Équipe" },
   { href: "/nous-contacter/#contact", label: "Contact" },
 ] as const;
+
+export const navLinksEN = [
+  { href: "/en/", label: "Welcome" },
+  { href: "/en/values/", label: "Approach and Values" },
+  { href: "/en/team/", label: "Team" },
+  { href: "/en/contact/#contact", label: "Contact" },
+] as const;
