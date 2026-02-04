@@ -7,9 +7,9 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-screen items-start pt-24 md:pt-32 lg:pt-40">
-        <div className="mx-auto max-w-3xl px-4 py-16 text-center md:px-8 lg:px-12">
-          <h1 className="mb-10 font-heading text-3xl font-medium text-saphir-blue md:text-4xl lg:text-5xl" style={{ textShadow: '0 0 30px rgba(0, 0, 0, 0.5), 0 0 60px rgba(0, 0, 0, 0.3), 0 0 90px rgba(0, 0, 0, 0.2)' }}>
+      <section className="min-h-screen">
+        <div className="sticky top-32 md:top-40 lg:top-48 mx-auto max-w-3xl px-4 py-16 text-center md:px-8 lg:px-12">
+          <h1 className="mb-10 font-heading text-3xl font-medium text-saphir-blue md:text-4xl lg:text-5xl" style={{ textShadow: '0 0 50px rgba(0, 0, 0, 0.8), 0 0 100px rgba(0, 0, 0, 0.6), 0 0 150px rgba(0, 0, 0, 0.5), 0 0 200px rgba(0, 0, 0, 0.4)' }}>
             Une gestion de convictions
           </h1>
           <blockquote className="font-quote text-xl italic md:text-2xl">

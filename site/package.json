@@ -11,7 +11,7 @@
     "clean": "node -e \"const fs=require('fs'); const p='.next'; if(fs.existsSync(p)){ fs.rmSync(p, {recursive:true}); console.log('Cache .next supprimé'); }\""
   },
   "dependencies": {
-    "next": "15.5.11",
+    "next": "^16.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
