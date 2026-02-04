@@ -13,9 +13,28 @@ html {
 }
 
 body {
-  @apply bg-cover bg-center bg-no-repeat bg-fixed text-saphir-dark antialiased;
+  @apply bg-no-repeat bg-fixed text-saphir-dark antialiased;
   background-image: url("/Tableau/complete-web (1).webp");
+  background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center top;
   position: relative;
+}
+
+/* Sur mobile, ajuster le fond pour éviter le zoom excessif */
+@media (max-width: 768px) {
+  body {
+    background-size: 200% auto;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 250% auto;
+    background-position: 60% top;
+  }
 }
 
 /* Overlay sombre sur le fond */
