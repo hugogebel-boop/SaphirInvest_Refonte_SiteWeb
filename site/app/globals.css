@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --saphir-blue: #1c5fb1;
+  --saphir-teal: #00a99d;
+  --saphir-dark: #2a2a2a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cover bg-center bg-no-repeat bg-fixed text-saphir-dark antialiased;
+  background-image: url("https://saphir-invest.ch/wp-content/uploads/2020/03/complete-web.jpg");
+}
+
+@layer utilities {
+  .section-min-h {
+    min-height: 100vh;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  @apply absolute -top-full left-4 z-50 rounded bg-saphir-blue px-4 py-2 text-white transition focus:top-4;
+}
