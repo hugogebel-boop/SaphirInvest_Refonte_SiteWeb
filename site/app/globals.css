@@ -13,22 +13,22 @@ html {
 }
 
 body {
-  @apply bg-no-repeat bg-fixed text-saphir-dark antialiased;
-  background-color: #1a1a1a;
+  @apply text-saphir-dark antialiased;
+  background-color: transparent;
   position: relative;
 }
 
 .fixed-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Hauteur dynamique pour mobile */
   z-index: -2;
   background-image: url("/Tableau/complete-web (1).webp");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  background-color: #1a1a1a;
 }
 
 /* Sur mobile, on ajuste légèrement la position pour centrer l'intérêt du tableau */
