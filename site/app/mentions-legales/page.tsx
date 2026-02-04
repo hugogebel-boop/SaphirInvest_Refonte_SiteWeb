@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales - Saphir Invest SA",
+  description:
+    "Mentions légales et informations juridiques de Saphir Invest SA, société de gestion de patrimoine à Lausanne, Suisse.",
+  alternates: {
+    canonical: "https://saphir-invest.ch/mentions-legales/",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function MentionsLegalesPage() {

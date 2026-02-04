@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /icon/
+
+Sitemap: https://saphir-invest.ch/sitemap.xml

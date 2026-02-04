@@ -30,7 +30,7 @@ export default function HomePageEN() {
           </p>
           <div className="mt-8 flex justify-center">
             <Link
-              href="/valeurs/"
+              href="/en/values/"
               className="inline-block rounded border border-white px-4 py-2 text-sm font-medium text-white transition hover:bg-white hover:text-saphir-blue"
             >
               Our approach
@@ -40,20 +40,24 @@ export default function HomePageEN() {
       </section>
 
       {/* Approach and Values */}
-      <section className="flex items-center bg-[#fafcff] py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-8 py-16 md:grid-cols-2 md:px-16 lg:px-24">
-          <div className="hidden md:block">
+      <section className="flex items-center bg-[#fafcff] py-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
+          <div className="order-2 md:order-1">
             <img
-              src="/Tableau/tableauzoom-web1.jpg"
+              src="/Tableau/tableauzoom-web1.webp"
               alt="Painting"
-              className="h-full w-full rounded-lg object-cover shadow-xl"
+              width={600}
+              height={400}
+              loading="lazy"
+              decoding="async"
+              className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="order-1 flex flex-col justify-center space-y-6 md:order-2">
             <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
               Approach and values
             </h2>
-            <blockquote className="font-quote text-lg italic md:text-xl">
+            <blockquote className="font-quote text-base italic sm:text-lg md:text-xl">
               <span className="text-saphir-dark">«</span> <RevealTextOnScroll 
                 text="Risk is not inherent in an investment; it is always relative to the price paid. Uncertainty is not the same as risk. Indeed, when great uncertainty – as in the autumn of 2008 – drives security prices to particularly low levels, they often become less risky investments."
                 speed={80}
@@ -72,7 +76,7 @@ export default function HomePageEN() {
             </p>
             <div className="flex justify-center md:justify-start">
               <Link
-                href="/valeurs/"
+                href="/en/values/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
                 More information
@@ -83,51 +87,59 @@ export default function HomePageEN() {
       </section>
 
       {/* Team */}
-      <section className="flex items-center bg-[#fafcff] py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-8 py-16 md:grid-cols-2 md:px-16 lg:px-24">
+      <section className="flex items-center bg-[#fafcff] py-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
               Team
             </h2>
-            <p className="text-lg text-saphir-dark md:text-xl">
+            <p className="text-base text-saphir-dark sm:text-lg md:text-xl">
               A dedicated team committed to protecting
               <br />
               and growing our clients&apos; wealth.
             </p>
-            <div className="flex justify-start">
+            <div className="flex justify-center md:justify-start">
               <Link
-                href="/equipe/"
+                href="/en/team/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
                 Discover
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div>
             <img
-              src="/Tableau/tableauzoom-web2.jpg"
+              src="/Tableau/tableauzoom-web2.webp"
               alt="Painting"
-              className="h-full w-full rounded-lg object-cover shadow-xl"
+              width={600}
+              height={400}
+              loading="lazy"
+              decoding="async"
+              className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="flex items-center bg-[#fafcff] py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-8 px-8 py-16 md:grid-cols-2 md:px-16 lg:px-24">
-          <div className="hidden md:block">
+      <section id="contact" className="flex items-center bg-[#fafcff] py-12 md:py-24">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
+          <div className="order-2 md:order-1">
             <img
-              src="/Tableau/tableauzoom-web3.jpg"
+              src="/Tableau/tableauzoom-web3.webp"
               alt="Painting"
-              className="h-full w-full rounded-lg object-cover shadow-xl"
+              width={600}
+              height={400}
+              loading="lazy"
+              decoding="async"
+              className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="order-1 flex flex-col justify-center space-y-6 md:order-2">
             <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
               Contact
             </h2>
-            <blockquote className="font-quote text-lg italic md:text-xl">
+            <blockquote className="font-quote text-base italic sm:text-lg md:text-xl">
               <span className="text-saphir-dark">«</span> <RevealTextOnScroll 
                 text="The intelligent investor is a realist who sells to optimists and buys from pessimists."
                 speed={100}
@@ -144,7 +156,7 @@ export default function HomePageEN() {
                 Benjamin Graham
               </a>
             </p>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
               <div className="flex items-start gap-3">
                 <svg className="h-5 w-5 shrink-0 text-saphir-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
@@ -172,7 +184,7 @@ export default function HomePageEN() {
             </div>
             <div className="flex justify-center md:justify-start">
               <Link
-                href="/nous-contacter/"
+                href="/en/contact/"
                 className="inline-block rounded border border-saphir-blue px-4 py-2 text-sm font-medium text-saphir-blue transition hover:bg-saphir-blue hover:text-white"
               >
                 Find us

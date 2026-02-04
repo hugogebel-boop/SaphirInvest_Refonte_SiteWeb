@@ -2,9 +2,23 @@ import type { Metadata } from "next";
 import { AnimatedQuote } from "@/components/AnimatedQuote";
 
 export const metadata: Metadata = {
-  title: "Valeurs et Charte",
+  title: "Approche et Valeurs",
   description:
-    "Notre objectif est d'établir un partenariat ouvert et impliqué avec nos clients. Nous investissons également notre propre argent dans nos idées d'investissement.",
+    "Notre philosophie d'investissement value investing à Lausanne. Partenariat ouvert avec nos clients, nous investissons notre propre argent dans nos idées. Gestion de convictions.",
+  alternates: {
+    canonical: "https://saphir-invest.ch/valeurs/",
+    languages: {
+      "fr-CH": "https://saphir-invest.ch/valeurs/",
+      "en": "https://saphir-invest.ch/en/values/",
+    },
+  },
+  openGraph: {
+    title: "Approche et Valeurs | Saphir Invest SA",
+    description:
+      "Notre philosophie d'investissement value investing. Partenariat ouvert, nous investissons notre propre argent dans nos idées.",
+    url: "https://saphir-invest.ch/valeurs/",
+    type: "website",
+  },
 };
 
 const charteItems = [
@@ -35,31 +49,31 @@ const charteItems = [
 ];
 
 const banques = [
-  { name: "BCV", logo: "/Banque depositaire/BCV_logo-web.png", alt: "BCV" },
+  { name: "BCV", logo: "/Banque depositaire/BCV_logo-web.webp", alt: "BCV" },
   {
     name: "Lombard Odier",
-    logo: "/Banque depositaire/Lombard_Odier_logo-web.png",
+    logo: "/Banque depositaire/Lombard_Odier_logo-web.webp",
     alt: "Lombard Odier",
   },
   {
     name: "Swissquote",
-    logo: "/Banque depositaire/logo swissquote.png",
+    logo: "/Banque depositaire/logo swissquote.webp",
     alt: "Swissquote",
   },
   {
     name: "UBP",
-    logo: "/Banque depositaire/logo UBP.png",
+    logo: "/Banque depositaire/logo UBP (1).webp",
     alt: "Union Bancaire Privée",
   },
-  { name: "UBS", logo: "/Banque depositaire/UBS_Logo-web.png", alt: "UBS" },
+  { name: "UBS", logo: "/Banque depositaire/UBS_Logo-web.webp", alt: "UBS" },
 ];
 
 export default function ValeursPage() {
   return (
     <div className="bg-[#fafcff]">
       {/* Approche et valeurs */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
           <h1 className="mb-8 font-heading text-2xl font-semibold uppercase tracking-wider text-saphir-blue md:text-3xl">
             Approche et valeurs
           </h1>
@@ -116,14 +130,14 @@ export default function ValeursPage() {
       </section>
 
       {/* Charte */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
-          <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
+          <div className="rounded-lg bg-white p-6 shadow-lg sm:p-8 md:p-12">
             <h2 className="mb-10 font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
               Notre charte
             </h2>
             
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
               {charteItems.map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-saphir-blue/20 bg-saphir-blue/5 text-xs font-semibold text-saphir-blue">
@@ -143,13 +157,13 @@ export default function ValeursPage() {
       </section>
 
       {/* Banques dépositaires & Citation */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
-          <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
+          <div className="rounded-lg bg-white p-6 shadow-lg sm:p-8 md:p-12">
             <h2 className="mb-10 font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
               Banques dépositaires
             </h2>
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-5">
               {banques.map((b) => (
                 <div
                   key={b.name}
@@ -161,6 +175,8 @@ export default function ValeursPage() {
                     className="max-h-20 w-full object-contain"
                     width={150}
                     height={80}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}

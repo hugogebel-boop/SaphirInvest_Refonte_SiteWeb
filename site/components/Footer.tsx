@@ -12,15 +12,19 @@ export function Footer() {
   return (
     <footer className="mt-auto bg-saphir-blue text-white">
       {/* Section principale */}
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-12 lg:px-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:px-12 md:py-16 lg:px-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           
           {/* Logo et description */}
           <div className="lg:col-span-1">
             <Link href={isEnglish ? "/en/" : "/"} className="inline-block">
               <img
-                src="/logo/logo Saphir Invest.png"
+                src="/logo/logo Saphir Invest.webp"
                 alt={site.name}
+                width={200}
+                height={34}
+                loading="lazy"
+                decoding="async"
                 className="h-8 w-auto object-contain brightness-0 invert"
               />
             </Link>
@@ -109,7 +113,7 @@ export function Footer() {
 
       {/* Barre inférieure */}
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-6 md:px-12 lg:px-16">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 md:px-12 lg:px-16">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-xs text-white/60">
               {footer.copyright}

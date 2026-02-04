@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum - Saphir Invest SA",
+  description:
+    "Legal information and impressum for Saphir Invest SA, wealth management company in Lausanne, Switzerland.",
+  alternates: {
+    canonical: "https://saphir-invest.ch/impressum/",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function ImpressumPage() {

@@ -2,12 +2,13 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // trailingSlash pour des URLs propres
   trailingSlash: true,
-  // Évite que Next.js prenne un lockfile parent (ex. C:\Users\hugog\) comme racine
+  // Évite que Next.js prenne un lockfile parent comme racine
   outputFileTracingRoot: path.resolve(process.cwd()),
+  // Images optimisées par Vercel automatiquement
   images: {
-    unoptimized: true,
+    remotePatterns: [],
   },
 };
 

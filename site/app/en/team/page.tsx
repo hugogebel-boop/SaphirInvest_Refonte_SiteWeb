@@ -1,16 +1,30 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "Our Team",
   description:
-    "A dedicated team committed to protecting and growing our clients' wealth. With a lean and flexible structure, Saphir Invest focuses exclusively on analyzing investment opportunities.",
+    "Meet the Saphir Invest SA team in Lausanne. Over 25 years of wealth management experience. Independent structure, dedicated managers. FINMA authorized, ASG member.",
+  alternates: {
+    canonical: "https://saphir-invest.ch/en/team/",
+    languages: {
+      "fr-CH": "https://saphir-invest.ch/equipe/",
+      "en": "https://saphir-invest.ch/en/team/",
+    },
+  },
+  openGraph: {
+    title: "Our Team | Saphir Invest SA",
+    description:
+      "Meet the Saphir Invest SA team. Over 25 years of wealth management experience in Lausanne, Switzerland.",
+    url: "https://saphir-invest.ch/en/team/",
+    type: "website",
+  },
 };
 
 const teamMembers = [
   {
     name: "Pierre Unternährer",
     role: "Founder",
-    image: "/Portrait/Pierre.png",
+    image: "/Portrait/Pierre (1).webp",
     alt: "Pierre Unternährer",
     bio: "Master of Science HEC Lausanne, Certified Financial Planner and Investment Expert CFPI. Before founding Saphir Invest in 2013, Pierre Unternährer worked at UBS as an economist and then portfolio manager. He has more than 25 years of experience in wealth management.",
     linkedin: "https://www.linkedin.com/mwlite/in/pierre-unternährer-4399046a/",
@@ -18,7 +32,7 @@ const teamMembers = [
   {
     name: "Yves Diserens",
     role: "Director and wealth manager at DM Invest SA",
-    image: "/Portrait/Yves.png",
+    image: "/Portrait/Yves (1).webp",
     alt: "Yves Diserens",
     bio: "Yves Diserens has more than 25 years of experience in wealth management.",
     linkedin: "https://www.linkedin.com/in/yves-diserens-a454b012/",
@@ -27,7 +41,7 @@ const teamMembers = [
   {
     name: "Patrick Germanier",
     role: "Wealth Manager",
-    image: "/Portrait/Portrait-P.Germanier-web.jpg",
+    image: "/Portrait/Portrait-P.Germanier-web.webp",
     alt: "Patrick Germanier",
     bio: "Patrick Germanier has more than 25 years of experience in wealth management.",
     linkedin: "https://www.linkedin.com/in/patrick-germanier-6220715/",
@@ -35,7 +49,7 @@ const teamMembers = [
   {
     name: "Fred Gysler",
     role: "Wealth Manager",
-    image: "/Portrait/Photo-Fred-noir_blanc.jpg",
+    image: "/Portrait/Photo-Fred-noir_blanc.webp",
     alt: "Fred Gysler",
     bio: "Fred Gysler has more than 25 years of experience in wealth management.",
     linkedin: "https://www.linkedin.com/",
@@ -43,7 +57,7 @@ const teamMembers = [
   {
     name: "Sandrine Lavanchy",
     role: "Management Assistant",
-    image: "/Portrait/Sandrine.png",
+    image: "/Portrait/Sandrine (1).webp",
     alt: "Sandrine Lavanchy",
     bio: "",
     linkedin: "https://www.linkedin.com/in/sandrine-lavanchy-a91b3b192/",
@@ -54,8 +68,8 @@ export default function TeamPage() {
   return (
     <div className="bg-[#fafcff]">
       {/* Intro */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
           <h1 className="mb-8 font-heading text-2xl font-semibold uppercase tracking-wider text-saphir-blue md:text-3xl">
             Team
           </h1>
@@ -82,17 +96,21 @@ export default function TeamPage() {
               With a lean and flexible structure, the company focuses exclusively on analyzing
               investment opportunities and customer service, based on two key aspects:
             </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <strong className="text-saphir-blue">Active commitment</strong>
-                <p className="mt-2">
+            <div className="mt-10 grid gap-8 sm:mt-16 sm:gap-12 md:grid-cols-2 md:gap-20">
+              <div className="space-y-6">
+                <p className="text-xl font-medium text-saphir-dark md:text-2xl">
+                  Active commitment
+                </p>
+                <p className="text-base text-saphir-dark/80 md:text-lg leading-loose">
                   Actively managing clients&apos; savings with a conviction-based approach. We firmly believe
                   in the power of common sense and insight.
                 </p>
               </div>
-              <div>
-                <strong className="text-saphir-blue">An entrepreneurial and independent spirit</strong>
-                <p className="mt-2">
+              <div className="space-y-6">
+                <p className="text-xl font-medium text-saphir-dark md:text-2xl">
+                  An entrepreneurial and independent spirit
+                </p>
+                <p className="text-base text-saphir-dark/80 md:text-lg leading-loose">
                   A team capable of conducting independent analyses and, where appropriate, partnering with
                   specialists in different fields.
                 </p>
@@ -103,19 +121,20 @@ export default function TeamPage() {
       </section>
 
       {/* Pierre Unternährer - featured */}
-      <section className="pt-12 pb-4 md:pt-16 md:pb-4">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
-          <div className="rounded-lg bg-white p-8 shadow-lg md:p-10">
+      <section className="pt-8 pb-4 md:pt-16 md:pb-4">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
+          <div className="rounded-lg bg-white p-6 shadow-lg sm:p-8 md:p-10">
             <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
               <img
                 src={teamMembers[0].image}
                 alt={teamMembers[0].alt}
                 width={220}
                 height={300}
+                decoding="async"
                 className="rounded-lg object-cover"
               />
               <div className="flex-1">
-                <h2 className="font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
+                <h2 className="font-heading text-lg font-semibold text-saphir-blue md:text-xl">
                   <a
                     href={teamMembers[0].linkedin}
                     target="_blank"
@@ -135,8 +154,8 @@ export default function TeamPage() {
 
       {/* Rest of team - grid */}
       <section className="pt-4 pb-8 md:pt-4 md:pb-12">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
-          <div className="grid gap-8 sm:grid-cols-2">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
+          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
             {teamMembers.slice(1).map((member) => (
               <div key={member.name} className="rounded-lg bg-white p-6 shadow-lg">
                 <img
@@ -144,6 +163,8 @@ export default function TeamPage() {
                   alt={member.alt}
                   width={188}
                   height={250}
+                  loading="lazy"
+                  decoding="async"
                   className="mx-auto rounded-lg object-cover"
                 />
                 <h3 className="mt-4 font-heading text-lg font-semibold text-saphir-blue md:text-xl">
@@ -165,9 +186,9 @@ export default function TeamPage() {
       </section>
 
       {/* Awards & Affiliations */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-20 md:px-32 lg:px-48">
-          <div className="rounded-lg bg-white p-8 shadow-lg md:p-12">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
+          <div className="rounded-lg bg-white p-6 shadow-lg sm:p-8 md:p-12">
             {/* Awards */}
             <h2 className="mb-8 font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue md:text-2xl">
               Awards
@@ -179,10 +200,12 @@ export default function TeamPage() {
               className="inline-block"
             >
               <img
-                src="/Certifications/BestManagerPW2019MidVol.jpg"
+                src="/Certifications/BestManagerPW2019.webp"
                 alt="Best Manager Performance Watcher 2019 Mid Vol"
                 width={300}
                 height={77}
+                loading="lazy"
+                decoding="async"
                 className="rounded-lg hover:opacity-90"
               />
             </a>
@@ -221,14 +244,14 @@ export default function TeamPage() {
                 in summer 2022.
               </p>
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4">
               <a
                 href="https://www.vsv-asg.ch/en/home"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-VSV-ASG.png" alt="VSG ASG" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-VSV-ASG.webp" alt="VSV ASG" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.aoos.ch/?lang=en"
@@ -236,7 +259,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-AOOS.png" alt="AOOS" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-AOOS.webp" alt="AOOS" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://ombudfinance.ch/en/home/"
@@ -244,7 +267,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-OFS.png" alt="OFS Ombud Finance Switzerland" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-OFS.webp" alt="OFS Ombud Finance Switzerland" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.finma.ch/en/finma-public/authorised-institutions-individuals-and-products/"
@@ -252,7 +275,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/logo-finma.png" alt="FINMA" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/logo-finma.webp" alt="FINMA" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
               </a>
             </div>
           </div>
