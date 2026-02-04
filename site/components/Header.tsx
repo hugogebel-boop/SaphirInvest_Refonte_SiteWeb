@@ -64,19 +64,19 @@ export function Header() {
         data-scrolled={isScrolled}
       >
         <div 
-          className={`relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 transition-[padding] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:px-6 lg:px-8 ${
+          className={`relative mx-auto flex max-w-7xl items-center justify-between px-4 transition-[padding] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:flex-col sm:justify-center sm:px-6 lg:px-8 ${
             isScrolled ? "py-2" : "py-4 sm:py-5 md:py-6"
           }`}
         >
-          {/* Logo + Tagline centré */}
-          <Link href={isEnglish ? "/en/" : "/"} className="flex flex-col items-center group" aria-label={`${site.name} - ${isEnglish ? "Home" : "Accueil"}`}>
+          {/* Logo + Tagline */}
+          <Link href={isEnglish ? "/en/" : "/"} className="flex flex-col items-start sm:items-center group" aria-label={`${site.name} - ${isEnglish ? "Home" : "Accueil"}`}>
             <div className={`relative transition-[height,width] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isScrolled ? "h-6 md:h-8" : "h-7 sm:h-8 md:h-10 lg:h-12"
             }`}>
               <img
                 src="/logo/logo Saphir Invest.webp"
                 alt={site.name}
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain object-left sm:object-center"
                 width={400}
                 height={68}
                 decoding="async"
@@ -93,7 +93,7 @@ export function Header() {
                   : "grid-rows-[1fr] opacity-100 mt-2"
               }`}
             >
-              <span className="overflow-hidden text-center font-light uppercase tracking-[0.2em] text-saphir-blue sm:tracking-[0.25em] text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap will-change-[opacity,transform]">
+              <span className="overflow-hidden text-left sm:text-center font-light uppercase tracking-[0.2em] text-saphir-blue sm:tracking-[0.25em] text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap will-change-[opacity,transform]">
                 {isEnglish ? "Asset management" : "Gestion de patrimoine"}
               </span>
             </div>
@@ -103,7 +103,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="absolute right-0 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 flex-col items-center justify-center gap-1 rounded-md text-saphir-blue hover:bg-saphir-blue/10 sm:right-1 lg:right-2"
+            className="flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-md text-saphir-blue hover:bg-saphir-blue/10 sm:absolute sm:right-4 sm:top-1/2 sm:-translate-y-1/2 lg:right-8"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? (isEnglish ? "Close menu" : "Fermer le menu") : (isEnglish ? "Open menu" : "Ouvrir le menu")}
