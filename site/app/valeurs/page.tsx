@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AnimatedQuote } from "@/components/AnimatedQuote";
 
 export const metadata: Metadata = {

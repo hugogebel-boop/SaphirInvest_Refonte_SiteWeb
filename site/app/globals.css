@@ -4,9 +4,8 @@
 
 :root {
   --saphir-blue: #1b5bac;
-  --saphir-teal: #00a99d;
   --saphir-dark: #2a2a2a;
-  --bg-overlay-opacity: 0.7; /* Ajuster entre 0 (pas de filtre) et 1 (noir complet) */
+  --bg-overlay-opacity: 0.7;
 }
 
 html {
@@ -27,12 +26,6 @@ body::before {
   background-color: rgba(0, 0, 0, var(--bg-overlay-opacity));
   pointer-events: none;
   z-index: -1;
-}
-
-@layer utilities {
-  .section-min-h {
-    min-height: 100vh;
-  }
 }
 
 /* Skip link for accessibility */

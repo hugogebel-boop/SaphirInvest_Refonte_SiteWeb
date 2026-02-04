@@ -180,7 +180,7 @@ export default function EquipePage() {
               className="inline-block"
             >
               <img
-                src="/certifications/BestManagerPW2019MidVol.jpg"
+                src="/Certifications/BestManagerPW2019MidVol.jpg"
                 alt="Best Manager Performance Watcher 2019 Mid Vol"
                 width={300}
                 height={77}
@@ -229,7 +229,7 @@ export default function EquipePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/certifications/Logo-VSV-ASG.png" alt="VSG ASG" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-VSV-ASG.png" alt="VSG ASG" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.aoos.ch/?lang=fr"
@@ -237,7 +237,7 @@ export default function EquipePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/certifications/Logo-AOOS.png" alt="AOOS" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-AOOS.png" alt="AOOS" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://ombudfinance.ch/accueil/"
@@ -245,7 +245,7 @@ export default function EquipePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/certifications/Logo-OFS.png" alt="OFS Ombud Finance Suisse" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/Logo-OFS.png" alt="OFS Ombud Finance Suisse" className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.finma.ch/fr/finma-public/etablissements-personnes-et-produits-autorises/"
@@ -253,7 +253,7 @@ export default function EquipePage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/certifications/logo-finma.png" alt="FINMA" className="max-h-16 w-full object-contain" />
+                <img src="/Certifications/logo-finma.png" alt="FINMA" className="max-h-16 w-full object-contain" />
               </a>
             </div>
           </div>
