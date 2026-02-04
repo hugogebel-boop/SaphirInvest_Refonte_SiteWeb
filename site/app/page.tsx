@@ -54,7 +54,7 @@ export default function HomePage() {
             />
           </div>
           <div className="order-1 flex flex-col justify-center space-y-6 md:order-2">
-            <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
+            <h2 className="font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue sm:text-2xl md:text-xl">
               Approche et valeurs
             </h2>
             <blockquote className="font-quote text-base italic sm:text-lg md:text-xl">
@@ -90,7 +90,7 @@ export default function HomePage() {
       <section className="flex items-center bg-[#fafcff] py-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
           <div className="flex flex-col justify-center space-y-6">
-            <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
+            <h2 className="font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue sm:text-2xl md:text-xl">
               Equipe
             </h2>
             <p className="text-base text-saphir-dark sm:text-lg md:text-xl">
@@ -136,7 +136,7 @@ export default function HomePage() {
             />
           </div>
           <div className="order-1 flex flex-col justify-center space-y-6 md:order-2">
-            <h2 className="font-heading text-lg font-semibold uppercase tracking-wider text-saphir-blue md:text-xl">
+            <h2 className="font-heading text-xl font-semibold uppercase tracking-wider text-saphir-blue sm:text-2xl md:text-xl">
               Contact
             </h2>
             <blockquote className="font-quote text-base italic sm:text-lg md:text-xl">
