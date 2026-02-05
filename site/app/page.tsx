@@ -9,8 +9,34 @@ export default function HomePage() {
       {/* Hero */}
       <section className="min-h-screen">
         <div className="sticky top-32 md:top-40 lg:top-48 mx-auto max-w-3xl px-4 py-16 text-center md:px-8 lg:px-12">
-          <h1 className="mb-10 font-heading text-3xl font-medium text-saphir-blue md:text-4xl lg:text-5xl" style={{ textShadow: '0 0 50px rgba(0, 0, 0, 0.8), 0 0 100px rgba(0, 0, 0, 0.6), 0 0 150px rgba(0, 0, 0, 0.5), 0 0 200px rgba(0, 0, 0, 0.4)' }}>
-            Une gestion de convictions
+          <h1 className="mb-10 font-heading text-3xl font-medium text-saphir-blue md:text-4xl lg:text-5xl">
+            <span
+              style={{
+                textShadow: `
+                  0 0 40px rgba(0,0,0,1),
+                  0 0 80px rgba(0,0,0,1),
+                  0 0 140px rgba(0,0,0,0.98),
+                  0 0 220px rgba(0,0,0,0.95),
+                  0 0 320px rgba(0,0,0,0.9),
+                  0 0 450px rgba(0,0,0,0.85),
+                  0 0 600px rgba(0,0,0,0.75),
+                  0 0 800px rgba(0,0,0,0.6),
+                  0 0 1000px rgba(0,0,0,0.4)
+                `
+              }}
+            >Une gestion </span>
+            <span
+              style={{
+                textShadow: `
+                  0 0 50px rgba(255,255,255,1),
+                  0 0 100px rgba(255,255,255,0.95),
+                  0 0 180px rgba(255,255,255,0.85),
+                  0 0 280px rgba(255,255,255,0.7),
+                  0 0 400px rgba(255,255,255,0.5),
+                  0 0 550px rgba(255,255,255,0.3)
+                `
+              }}
+            >de convictions</span>
           </h1>
           <blockquote className="font-quote text-xl italic md:text-2xl">
             « <RevealText 
