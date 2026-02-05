@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -125,12 +126,11 @@ export default function TeamPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-12 md:px-32 lg:px-44">
           <div className="rounded-lg bg-white p-6 shadow-lg sm:p-8 md:p-10">
             <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
-              <img
+              <Image
                 src={teamMembers[0].image}
-                alt={teamMembers[0].alt}
+                alt={`Portrait of ${teamMembers[0].name}, ${teamMembers[0].role} at Saphir Invest`}
                 width={220}
                 height={300}
-                decoding="async"
                 className="rounded-lg object-cover"
               />
               <div className="flex-1">
@@ -158,13 +158,11 @@ export default function TeamPage() {
           <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
             {teamMembers.slice(1).map((member) => (
               <div key={member.name} className="rounded-lg bg-white p-6 shadow-lg">
-                <img
+                <Image
                   src={member.image}
-                  alt={member.alt}
+                  alt={`Portrait of ${member.name}, ${member.role} at Saphir Invest`}
                   width={188}
                   height={250}
-                  loading="lazy"
-                  decoding="async"
                   className="mx-auto rounded-lg object-cover"
                 />
                 <h3 className="mt-4 font-heading text-lg font-semibold text-saphir-blue md:text-xl">
@@ -199,13 +197,11 @@ export default function TeamPage() {
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <img
+              <Image
                 src="/Certifications/BestManagerPW2019.webp"
-                alt="Best Manager Performance Watcher 2019 Mid Vol"
+                alt="Best Manager Performance Watcher 2019 Mid Vol award"
                 width={300}
                 height={77}
-                loading="lazy"
-                decoding="async"
                 className="rounded-lg hover:opacity-90"
               />
             </a>
@@ -251,7 +247,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-VSV-ASG.webp" alt="VSV ASG" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
+                <Image src="/Certifications/Logo-VSV-ASG.webp" alt="Swiss Association of Asset Managers (VSV ASG) logo" width={100} height={64} className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.aoos.ch/?lang=en"
@@ -259,7 +255,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-AOOS.webp" alt="AOOS" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
+                <Image src="/Certifications/Logo-AOOS.webp" alt="AOOS supervisory body logo" width={100} height={64} className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://ombudfinance.ch/en/home/"
@@ -267,7 +263,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/Logo-OFS.webp" alt="OFS Ombud Finance Switzerland" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
+                <Image src="/Certifications/Logo-OFS.webp" alt="OFS Ombud Finance Switzerland logo" width={100} height={64} className="max-h-16 w-full object-contain" />
               </a>
               <a
                 href="https://www.finma.ch/en/finma-public/authorised-institutions-individuals-and-products/"
@@ -275,7 +271,7 @@ export default function TeamPage() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center p-4 transition hover:opacity-70"
               >
-                <img src="/Certifications/logo-finma.webp" alt="FINMA" width={100} height={64} loading="lazy" decoding="async" className="max-h-16 w-full object-contain" />
+                <Image src="/Certifications/logo-finma.webp" alt="FINMA Swiss Financial Market Supervisory Authority logo" width={100} height={64} className="max-h-16 w-full object-contain" />
               </a>
             </div>
           </div>

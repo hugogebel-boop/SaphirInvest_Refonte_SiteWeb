@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { AnimatedQuote } from "@/components/AnimatedQuote";
 
 export const metadata: Metadata = {
@@ -91,8 +92,8 @@ export default function ValeursPage() {
               <a
                 href="https://fr.wikipedia.org/wiki/Benjamin_Graham"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-saphir-blue"
+                rel="noopener noreferrer nofollow"
+                className="text-saphir-blue hover:underline"
               >
                 Benjamin Graham
               </a>
@@ -100,8 +101,8 @@ export default function ValeursPage() {
               <a
                 href="https://fr.wikipedia.org/wiki/Warren_Buffett"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-saphir-blue"
+                rel="noopener noreferrer nofollow"
+                className="text-saphir-blue hover:underline"
               >
                 Warren Buffett
               </a>
@@ -109,8 +110,8 @@ export default function ValeursPage() {
               <a
                 href="https://en.wikipedia.org/wiki/Seth_Klarman"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-saphir-blue"
+                rel="noopener noreferrer nofollow"
+                className="text-saphir-blue hover:underline"
               >
                 Seth Klarman
               </a>{" "}
@@ -118,8 +119,8 @@ export default function ValeursPage() {
               <a
                 href="https://en.wikipedia.org/wiki/Joel_Greenblatt"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="text-saphir-blue"
+                rel="noopener noreferrer nofollow"
+                className="text-saphir-blue hover:underline"
               >
                 Joel Greenblatt
               </a>
@@ -169,14 +170,12 @@ export default function ValeursPage() {
                   key={b.name}
                   className="flex items-center justify-center p-4"
                 >
-                  <img
+                  <Image
                     src={b.logo}
-                    alt={b.alt}
+                    alt={`Logo ${b.alt} - banque dépositaire partenaire`}
                     className="max-h-20 w-full object-contain"
                     width={150}
                     height={80}
-                    loading="lazy"
-                    decoding="async"
                   />
                 </div>
               ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { RevealText, RevealTextOnScroll } from "@/components/Typewriter";
 
 export default function HomePage() {
@@ -48,7 +49,7 @@ export default function HomePage() {
             <a
               href="https://en.wikipedia.org/wiki/Peter_Lynch"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="text-white/80 hover:text-white"
             >
               Peter Lynch
@@ -69,13 +70,11 @@ export default function HomePage() {
       <section className="flex items-center bg-[#fafcff] py-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
           <div className="order-2 md:order-1">
-            <img
+            <Image
               src="/Tableau/tableauzoom-web1.webp"
-              alt="Tableau"
+              alt="Détail du tableau Times Square de Louis Magre - tons dorés et lumière urbaine"
               width={600}
               height={400}
-              loading="lazy"
-              decoding="async"
               className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
@@ -94,7 +93,7 @@ export default function HomePage() {
               <a
                 href="https://en.wikipedia.org/wiki/Seth_Klarman"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-saphir-dark/70 hover:text-saphir-dark"
               >
                 Seth Klarman
@@ -134,13 +133,11 @@ export default function HomePage() {
             </div>
           </div>
           <div>
-            <img
+            <Image
               src="/Tableau/tableauzoom-web2.webp"
-              alt="Tableau"
+              alt="Détail du tableau Times Square de Louis Magre - silhouettes et atmosphère nocturne"
               width={600}
               height={400}
-              loading="lazy"
-              decoding="async"
               className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
@@ -151,13 +148,11 @@ export default function HomePage() {
       <section id="contact" className="flex items-center bg-[#fafcff] py-12 md:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-6 px-4 py-8 sm:px-6 md:grid-cols-2 md:gap-8 md:px-12 md:py-16 lg:px-16">
           <div className="order-2 md:order-1">
-            <img
+            <Image
               src="/Tableau/tableauzoom-web3.webp"
-              alt="Tableau"
+              alt="Détail du tableau Times Square de Louis Magre - reflets et profondeur"
               width={600}
               height={400}
-              loading="lazy"
-              decoding="async"
               className="h-48 w-full rounded-lg object-cover shadow-xl sm:h-64 md:h-full"
             />
           </div>
@@ -176,7 +171,7 @@ export default function HomePage() {
               <a
                 href="https://fr.wikipedia.org/wiki/Benjamin_Graham"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-saphir-dark/70 hover:text-saphir-dark"
               >
                 Benjamin Graham
@@ -204,7 +199,12 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                 </svg>
                 <div>
-                  <p className="font-semibold text-saphir-dark">+41 21 648 00 16</p>
+                  <a 
+                    href="tel:+41216480016" 
+                    className="font-semibold text-saphir-dark hover:text-saphir-blue transition-colors"
+                  >
+                    +41 21 648 00 16
+                  </a>
                 </div>
               </div>
             </div>
