@@ -116,7 +116,7 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 md:px-12 lg:px-16">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-xs text-white/60">
-              {footer.copyright}
+              © 2013-{new Date().getFullYear()} - Saphir Invest SA
             </p>
             <p className="text-xs text-white/60">
               Art : &ldquo;Times Square&rdquo; {isEnglish ? "by" : "par"}{" "}
