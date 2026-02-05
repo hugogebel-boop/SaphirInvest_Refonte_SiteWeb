@@ -2,48 +2,63 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { navLinks, navLinksEN, site } from "@/lib/site";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const taglineRef = useRef<HTMLDivElement>(null);
   
   // L'effet grand header uniquement sur la page d'accueil (FR ou EN)
   const isHomePage = pathname === "/" || pathname === "/en" || pathname === "/en/";
   const isEnglish = pathname.startsWith("/en");
 
-  // Détecter le scroll via un listener optimisé (plus fiable que IntersectionObserver pour ce cas précis)
-  useEffect(() => {
+  // Animation 100% liée au scroll avec transform (GPU accelerated, pas de vibrations)
+  const updateAnimation = useCallback(() => {
+    if (!taglineRef.current) return;
+    
+    // Sur les autres pages, toujours en mode compact
     if (!isHomePage) {
-      setIsScrolled(true);
+      taglineRef.current.style.transform = "scaleY(0)";
+      taglineRef.current.style.opacity = "0";
+      taglineRef.current.style.maxHeight = "0px";
+      taglineRef.current.style.marginTop = "0px";
       return;
     }
 
-    let ticking = false;
+    const scrollY = Math.max(0, window.scrollY);
+    // Animation sur les premiers 200px de scroll
+    const scrollThreshold = 300;
+    // Progress de 0 (en haut) à 1 (scrollé)
+    const progress = Math.min(1, scrollY / scrollThreshold);
+    
+    // Tagline: transform + opacity (GPU accelerated, pas de reflow)
+    const taglineScale = 1 - progress;
+    const taglineOpacity = 1 - progress;
+    taglineRef.current.style.transform = `scaleY(${taglineScale})`;
+    taglineRef.current.style.opacity = `${taglineOpacity}`;
+    taglineRef.current.style.maxHeight = `${(1 - progress) * 52}px`;
+    taglineRef.current.style.marginTop = `${(1 - progress) * 16}px`;
+  }, [isHomePage]);
 
+  useEffect(() => {
+    updateAnimation();
+
+    let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          // Seuil très bas (10px) pour réactivité immédiate
-          // Utiliser Math.max pour éviter les valeurs négatives (rebond sur iOS)
-          const scrollY = Math.max(0, window.scrollY);
-          const shouldBeScrolled = scrollY > 10;
-          
-          setIsScrolled(shouldBeScrolled);
+          updateAnimation();
           ticking = false;
         });
         ticking = true;
       }
     };
 
-    // Initial check
-    handleScroll();
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHomePage]);
+  }, [updateAnimation]);
 
   // Empêcher le scroll quand le menu est ouvert
   useEffect(() => {
@@ -60,19 +75,14 @@ export function Header() {
   return (
     <>
       <header 
-        className={`sticky top-0 z-40 border-b border-saphir-blue/10 bg-[#fafcff]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fafcff]/85 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[height,background-color]`}
-        data-scrolled={isScrolled}
+        className="sticky top-0 z-40 border-b border-saphir-blue/10 bg-[#fafcff]/95 backdrop-blur supports-[backdrop-filter]:bg-[#fafcff]/85"
       >
         <div 
-          className={`relative mx-auto flex max-w-7xl items-center justify-between px-4 transition-[padding] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] sm:flex-col sm:justify-center sm:px-6 lg:px-8 ${
-            isScrolled ? "py-2 md:py-6" : "py-4 sm:py-5 md:py-6"
-          }`}
+          className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:flex-col sm:justify-center sm:px-6 lg:px-8"
         >
           {/* Logo + Tagline */}
           <Link href={isEnglish ? "/en/" : "/"} className="flex flex-col items-start sm:items-center group" aria-label={`${site.name} - ${isEnglish ? "Home" : "Accueil"}`}>
-            <div className={`relative transition-[height,width] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              isScrolled ? "h-6 md:h-10 lg:h-12" : "h-7 sm:h-8 md:h-10 lg:h-12"
-            }`}>
+            <div className="h-8 sm:h-9 md:h-10 lg:h-12">
               <img
                 src="/logo/logo Saphir Invest.webp"
                 alt={site.name}
@@ -81,19 +91,16 @@ export function Header() {
                 height={68}
                 decoding="async"
                 fetchPriority="high"
-                style={{ transform: "translate3d(0,0,0)" }}
               />
             </div>
             
-            {/* Tagline - visible seulement quand pas scrollé */}
+            {/* Tagline - animation liée au scroll */}
             <div 
-              className={`grid transition-[grid-template-rows,margin-top,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isScrolled 
-                  ? "grid-rows-[0fr] opacity-0 mt-0" 
-                  : "grid-rows-[1fr] opacity-100 mt-4"
-              }`}
+              ref={taglineRef}
+              className="origin-top will-change-[transform,opacity] overflow-hidden"
+              style={{ maxHeight: "52px", opacity: 1, marginTop: "16px", transform: "scaleY(1)" }}
             >
-              <span className="overflow-hidden text-left sm:text-center font-light uppercase tracking-[0.2em] text-saphir-blue sm:tracking-[0.25em] text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap will-change-[opacity,transform]">
+              <span className="block text-left sm:text-center font-light uppercase tracking-[0.2em] text-saphir-blue sm:tracking-[0.25em] text-lg sm:text-xl md:text-2xl lg:text-3xl whitespace-nowrap">
                 {isEnglish ? "Asset management" : "Gestion de patrimoine"}
               </span>
             </div>

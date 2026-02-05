@@ -37,6 +37,17 @@ export default function MentionsLegalesPage() {
               Ce site est la propriété de Saphir Invest SA. Pour toute question relative aux mentions légales, veuillez
               nous contacter.
             </p>
+            <p className="text-sm text-saphir-dark/60">
+              Site redesigné par{" "}
+              <a
+                href="https://smartflowsa.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-saphir-blue"
+              >
+                Hugo Gebel – Smartflow
+              </a>
+            </p>
           </div>
         </div>
       </section>

@@ -37,6 +37,17 @@ export default function ImpressumPage() {
               This website is the property of Saphir Invest SA. For any questions regarding the impressum, please
               contact us.
             </p>
+            <p className="text-sm text-saphir-dark/60">
+              Website redesigned by{" "}
+              <a
+                href="https://smartflowsa.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-saphir-blue"
+              >
+                Hugo Gebel – Smartflow
+              </a>
+            </p>
           </div>
         </div>
       </section>
